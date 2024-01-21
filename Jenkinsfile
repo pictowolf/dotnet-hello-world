@@ -22,7 +22,8 @@ pipeline {
     stage('Publish') {
       steps {
         sh '                dotnet publish -c Release -o ./publish'
-        sh '                sh "pwd && zip -r publish.zip ./publish/"'
+        dir(path: '~/workspace/dotnet-hello-world_master/')
+        sh '                sh "zip -r publish.zip ./publish/"'
         archiveArtifacts(artifacts: './publish.zip"', allowEmptyArchive: true)
       }
     }
