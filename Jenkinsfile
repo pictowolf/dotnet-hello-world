@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh '''dotnet publish --no-build -o ./publish
 '''
-        sh 'sh \'zip -r publish.zip ./publish/\''
+        sh 'sh \'zip -r publish.zip ${WORKSPACE}/publish/\''
         archiveArtifacts(artifacts: './publish.zip', allowEmptyArchive: true, fingerprint: true)
       }
     }
