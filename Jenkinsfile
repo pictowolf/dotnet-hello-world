@@ -21,7 +21,7 @@ pipeline {
 
     stage('Publish') {
       steps {
-        sh 'dotnet publish --no-build -o /app/publish'
+        sh 'dotnet publish --no-build -o ~/app/publish'
       }
     }
 
