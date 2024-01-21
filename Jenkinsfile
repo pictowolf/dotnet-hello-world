@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh '''dotnet publish --no-build -o ~/app/publish
 '''
-        archiveArtifacts(artifacts: '~/app/publish/**', allowEmptyArchive: true)
+        archiveArtifacts(artifacts: '/home/rocky/app/publish/**', allowEmptyArchive: true)
       }
     }
 
