@@ -21,9 +21,9 @@ pipeline {
 
     stage('Publish') {
       steps {
-        sh '''dotnet publish --no-build -o ~/app/publish
+        sh '''dotnet publish --no-build -o ./publish
 '''
-        archiveArtifacts(artifacts: '/home/rocky/app/publish', allowEmptyArchive: true)
+        archiveArtifacts(artifacts: 'publish/**', allowEmptyArchive: true)
       }
     }
 
