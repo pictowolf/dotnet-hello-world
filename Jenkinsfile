@@ -21,9 +21,9 @@ pipeline {
 
     stage('Publish') {
       steps {
-        sh '                sh "dotnet publish -c Release -o ${WORKSPACE}/publish"'
-        sh '                sh "cd ${WORKSPACE} && zip -r publish.zip publish/"'
-        archiveArtifacts(artifacts: '"${WORKSPACE}/publish.zip"', allowEmptyArchive: true, fingerprint: true)
+        sh '                dotnet publish -c Release -o ./publish'
+        sh '                sh "pwd && zip -r publish.zip ./publish/"'
+        archiveArtifacts(artifacts: './publish.zip"', allowEmptyArchive: true)
       }
     }
 
