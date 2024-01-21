@@ -23,7 +23,7 @@ pipeline {
       steps {
         sh '''                dotnet publish -c Release -o ./publish &&
 zip -r publish.zip ./publish/'''
-        archiveArtifacts(artifacts: './publish.zip"', allowEmptyArchive: true)
+        archiveArtifacts(artifacts: 'publish.zip', allowEmptyArchive: true)
       }
     }
 
